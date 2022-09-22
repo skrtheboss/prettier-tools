@@ -2,7 +2,7 @@ import * as prettier from 'prettier';
 import Piscina from 'piscina';
 import { readFileSync, writeFileSync } from 'node:fs';
 
-export function format(filepath: string): void {
+export function write(filepath: string): void {
     const original = readFileSync(filepath, { encoding: 'utf-8' });
 
     const result = prettier.format(original, { ...Piscina.workerData, filepath });

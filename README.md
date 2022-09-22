@@ -8,7 +8,7 @@ A collection of Nx plugins and commons tools to build them.
 ## Plugins
 
 | Plugin                                                      | Description                             |
-| ----------------------------------------------------------- |-----------------------------------------|
+| ----------------------------------------------------------- | --------------------------------------- |
 | [`parallel-prettier`](packages/parallel-prettier/README.md) | Run prettier in multiple worker threads |
 
 ## Maintainers

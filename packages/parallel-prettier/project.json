@@ -4,47 +4,21 @@
     "projectType": "library",
     "targets": {
         "build": {
-            "executor": "@nrwl/js:swc",
+            "executor": "@nrwl/js:tsc",
             "outputs": ["{options.outputPath}"],
             "options": {
                 "outputPath": "dist/packages/parallel-prettier",
                 "main": "packages/parallel-prettier/src/index.ts",
                 "tsConfig": "packages/parallel-prettier/tsconfig.lib.json",
-                "assets": [
-                    "packages/parallel-prettier/*.md",
-                    {
-                        "input": "./packages/parallel-prettier/src",
-                        "glob": "**/!(*.ts)",
-                        "output": "./src"
-                    },
-                    {
-                        "input": "./packages/parallel-prettier/src",
-                        "glob": "**/*.d.ts",
-                        "output": "./src"
-                    },
-                    {
-                        "input": "./packages/parallel-prettier",
-                        "glob": "generators.json",
-                        "output": "."
-                    },
-                    {
-                        "input": "./packages/parallel-prettier",
-                        "glob": "executors.json",
-                        "output": "."
-                    }
-                ]
+                "assets": ["packages/parallel-prettier/*.md"],
+                "updateBuildableProjectDepsInPackageJson": false
             }
         },
         "lint": {
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": [
-                    "packages/parallel-prettier/**/*.ts",
-                    "packages/parallel-prettier/generators.json",
-                    "packages/parallel-prettier/executors.json",
-                    "packages/parallel-prettier/package.json"
-                ]
+                "lintFilePatterns": ["packages/parallel-prettier/**/*.ts"]
             }
         },
         "test": {
@@ -65,5 +39,5 @@
             }
         }
     },
-    "tags": ["type:plugin"]
+    "tags": []
 }
