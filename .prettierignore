@@ -1,0 +1,7 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+
+packages/nx-prisma/tests/artifacts
+packages/nx-prisma/tests/migrations

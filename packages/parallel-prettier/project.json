@@ -1,0 +1,69 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/parallel-prettier/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/js:swc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/packages/parallel-prettier",
+                "main": "packages/parallel-prettier/src/index.ts",
+                "tsConfig": "packages/parallel-prettier/tsconfig.lib.json",
+                "assets": [
+                    "packages/parallel-prettier/*.md",
+                    {
+                        "input": "./packages/parallel-prettier/src",
+                        "glob": "**/!(*.ts)",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/parallel-prettier/src",
+                        "glob": "**/*.d.ts",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/parallel-prettier",
+                        "glob": "generators.json",
+                        "output": "."
+                    },
+                    {
+                        "input": "./packages/parallel-prettier",
+                        "glob": "executors.json",
+                        "output": "."
+                    }
+                ]
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": [
+                    "packages/parallel-prettier/**/*.ts",
+                    "packages/parallel-prettier/generators.json",
+                    "packages/parallel-prettier/executors.json",
+                    "packages/parallel-prettier/package.json"
+                ]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/packages/parallel-prettier"],
+            "options": {
+                "jestConfig": "packages/parallel-prettier/jest.config.ts",
+                "passWithNoTests": true
+            }
+        },
+        "version": {
+            "executor": "@jscutlery/semver:version",
+            "options": {
+                "baseBranch": "main",
+                "preset": "conventional",
+                "tagPrefix": "${projectName}@",
+                "commitMessageFormat": "chore(${projectName}): release version ${version}"
+            }
+        }
+    },
+    "tags": ["type:plugin"]
+}

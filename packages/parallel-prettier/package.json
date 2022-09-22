@@ -1,0 +1,23 @@
+{
+    "name": "parallel-prettier",
+    "version": "0.0.0",
+    "author": "Denis Frenademetz <denisfrenademetz97@gmail.com>",
+    "repository": "https://github.com/parallel-prettier/parallel-prettier",
+    "bugs": "https://github.com/parallel-prettier/parallel-prettier/issues",
+    "license": "MIT",
+    "files": [
+        "index.js",
+        "cli.js",
+        "lib"
+    ],
+    "bin": {
+        "parallel-prettier": "./cli.js"
+    },
+    "main": "src/index.js",
+    "engines": {
+        "node": ">=14"
+    },
+    "dependencies": {
+        "@swc/helpers": "^0.4.3"
+    }
+}
