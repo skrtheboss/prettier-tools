@@ -1,6 +1,7 @@
 {
     "name": "parallel-prettier",
     "version": "0.0.0",
+    "description": "Concurrent prettier runner",
     "author": "Denis Frenademetz <denisfrenademetz97@gmail.com>",
     "repository": "https://github.com/parallel-prettier/parallel-prettier",
     "bugs": "https://github.com/parallel-prettier/parallel-prettier/issues",
@@ -13,6 +14,12 @@
     "bin": {
         "parallel-prettier": "./cli.js"
     },
+    "keywords": [
+        "prettier",
+        "parallel",
+        "concurrent",
+        "mixer"
+    ],
     "main": "src/index.js",
     "engines": {
         "node": ">=16.13.0"
@@ -22,7 +29,8 @@
         "fast-glob": "^3.2.12",
         "ignore": "^5.2.0",
         "piscina": "^3.2.0",
-        "ora": "^5.4.1"
+        "ora": "^5.4.1",
+        "tslib": "^2.4.0"
     },
     "peerDependencies": {
         "prettier": "^2.7.1"
