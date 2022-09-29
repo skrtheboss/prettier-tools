@@ -15,13 +15,13 @@ specifiers:
     '@nrwl/nx-cloud': 14.7.0
     '@nrwl/nx-plugin': 14.8.1
     '@nrwl/workspace': 14.8.1
-    '@swc-node/register': ^1.5.2
+    '@swc-node/register': 1.5.2
     '@swc/cli': 0.1.57
     '@swc/core': 1.3.3
     '@types/jest': 28.1.8
     '@types/node': 16.11.62
     '@types/semver': 7.3.12
-    '@types/yargs': ^17.0.13
+    '@types/yargs': 17.0.13
     '@typescript-eslint/eslint-plugin': 5.38.1
     '@typescript-eslint/parser': 5.38.1
     commitizen: 4.2.5
@@ -33,8 +33,8 @@ specifiers:
     inquirer: 8.2.4
     is-ci: 3.0.1
     jest: 28.1.3
-    jest-environment-jsdom: ^29.1.1
-    jsonc-eslint-parser: ^2.1.0
+    jest-environment-jsdom: 29.1.1
+    jsonc-eslint-parser: 2.1.0
     lint-staged: 13.0.3
     nx: 14.8.1
     ora: 5.4.1
