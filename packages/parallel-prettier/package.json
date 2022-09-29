@@ -15,9 +15,16 @@
     },
     "main": "src/index.js",
     "engines": {
-        "node": ">=14"
+        "node": ">=16.13.0"
     },
     "dependencies": {
-        "@swc/helpers": "^0.4.3"
+        "yargs": "^17.5.1",
+        "fast-glob": "^3.2.12",
+        "ignore": "^5.2.0",
+        "piscina": "^3.2.0",
+        "ora": "^5.4.1"
+    },
+    "peerDependencies": {
+        "prettier": "^2.7.1"
     }
 }

@@ -1,1 +1,1 @@
-export * from './test';
+export { processParallel } from './process';

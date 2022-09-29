@@ -7,4 +7,3 @@ npm install -g parallel-prettier
 ```
 
 After installing the CLI, the `parallel-prettier` command will be available to you.
-
