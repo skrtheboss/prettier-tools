@@ -1,15 +1,14 @@
 {
     "name": "parallel-prettier",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Concurrent prettier runner",
     "author": "Denis Frenademetz <denisfrenademetz97@gmail.com>",
     "repository": "https://github.com/parallel-prettier/parallel-prettier",
     "bugs": "https://github.com/parallel-prettier/parallel-prettier/issues",
     "license": "MIT",
     "files": [
-        "index.js",
         "cli.js",
-        "lib"
+        "src"
     ],
     "bin": {
         "parallel-prettier": "./cli.js"
