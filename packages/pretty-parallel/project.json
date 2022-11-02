@@ -43,6 +43,13 @@
                 "tagPrefix": "${projectName}@",
                 "commitMessageFormat": "chore(${projectName}): release version ${version}"
             }
+        },
+        "publish-to-npm": {
+            "executor": "nx:run-commands",
+            "options": {
+                "cwd": "./dist/packages/pretty-parallel",
+                "command": "pnpm publish --access public ."
+            }
         }
     },
     "tags": []

@@ -14,6 +14,9 @@
         }
     },
     "targetDefaults": {
+        "publish-to-npm": {
+            "dependsOn": ["build"]
+        },
         "build": {
             "dependsOn": ["^build"],
             "inputs": ["production", "^production"]
