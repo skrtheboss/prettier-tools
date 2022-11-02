@@ -1,1 +1,1 @@
-npm publish --access public dist/packages/parallel-prettier
+npm publish --access public dist/packages/pretty-parallel

@@ -1,16 +1,16 @@
 {
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "packages/parallel-prettier/src",
+    "sourceRoot": "packages/pretty-parallel/src",
     "projectType": "library",
     "targets": {
         "build": {
             "executor": "@nrwl/js:tsc",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/packages/parallel-prettier",
-                "main": "packages/parallel-prettier/src/index.ts",
-                "tsConfig": "packages/parallel-prettier/tsconfig.lib.json",
-                "assets": ["packages/parallel-prettier/*.md"],
+                "outputPath": "dist/packages/pretty-parallel",
+                "main": "packages/pretty-parallel/src/index.ts",
+                "tsConfig": "packages/pretty-parallel/tsconfig.lib.json",
+                "assets": ["packages/pretty-parallel/*.md"],
                 "updateBuildableProjectDepsInPackageJson": false
             }
         },
@@ -18,15 +18,21 @@
             "executor": "@nrwl/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
-                "lintFilePatterns": ["packages/parallel-prettier/**/*.ts"]
+                "lintFilePatterns": ["packages/pretty-parallel/**/*.ts"]
             }
         },
         "test": {
             "executor": "@nrwl/jest:jest",
-            "outputs": ["{workspaceRoot}/coverage/packages/parallel-prettier"],
+            "outputs": ["{workspaceRoot}/coverage/packages/pretty-parallel"],
             "options": {
-                "jestConfig": "packages/parallel-prettier/jest.config.ts",
+                "jestConfig": "packages/pretty-parallel/jest.config.ts",
                 "passWithNoTests": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "code-coverage": true
+                }
             }
         },
         "version": {
