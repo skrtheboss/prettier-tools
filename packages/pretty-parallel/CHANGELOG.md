@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.0.4](https://github.com/skrtheboss/prettier-tools/compare/pretty-parallel@0.0.3...pretty-parallel@0.0.4) (2022-11-02)
+
+### Bug Fixes
+
+-   **pretty-parallel:** fix eta calculation ([fc306e2](https://github.com/skrtheboss/prettier-tools/commit/fc306e271e662642a06d35419c81bc4e7bfebd39))
+
 ## [0.0.3](https://github.com/skrtheboss/prettier-tools/compare/pretty-parallel@0.0.2...pretty-parallel@0.0.3) (2022-11-02)
 
 ### Bug Fixes
