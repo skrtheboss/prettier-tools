@@ -32,7 +32,7 @@ export class ProgressReporter {
         this.checkFiles.text = `${this.message}\t${percent}% | ${this.processed}/${
             this.totalCount
         }  | ETA: ${this.eta.getTime()} | Elapsed: ${prettyMilliseconds(elapsedMs)} | ${(
-            this.eta.getRate() / 1_000
+            this.eta.getRate() * 1_000
         ).toFixed(0)} files/s`;
     }
 
