@@ -1,6 +1,6 @@
 {
     "$schema": "./node_modules/nx/schemas/nx-schema.json",
-    "npmScope": "parallel-prettier",
+    "npmScope": "pretty-parallel",
     "affected": {
         "defaultBase": "main"
     },

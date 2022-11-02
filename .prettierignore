@@ -3,7 +3,4 @@
 /dist
 /coverage
 
-packages/nx-prisma/tests/artifacts
-packages/nx-prisma/tests/migrations
-
 pnpm-lock.yaml

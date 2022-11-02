@@ -10,8 +10,8 @@ import { SupportLanguage } from 'prettier';
 import { Stats } from 'node:fs';
 
 interface Context {
-    readonly filePatterns: Array<string | number>;
-    readonly languages: SupportLanguage[];
+    readonly filePatterns: ReadonlyArray<string | number>;
+    readonly languages: ReadonlyArray<SupportLanguage>;
 }
 
 async function statSafe(filePath: string): Promise<Stats | null> {
@@ -34,10 +34,8 @@ interface GLobError {
 export async function* expandPatterns(context: Context): AsyncGenerator<string | GLobError, void, undefined> {
     const cwd = process.cwd();
     const seen = new Set();
-    let noResults = true;
 
     for await (const pathOrError of expandPatternsInternal(context)) {
-        noResults = false;
         if (typeof pathOrError !== 'string') {
             yield pathOrError;
             continue;

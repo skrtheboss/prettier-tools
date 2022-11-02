@@ -6,9 +6,10 @@ import { hideBin } from 'yargs/helpers';
 import { processParallel } from './src';
 
 const parseArgv = yargs(hideBin(process.argv))
-    .scriptName('parallel-prettier')
+    .env('PRETTY_PARALLEL')
+    .scriptName('pretty-parallel')
     .usage(
-        'Usage: parallel-prettier [processing options] [options] [file/dir/glob ...]\n Example: parallel-prettier --max-workers=6 -c **/*.ts'
+        'Usage: pretty-parallel [processing options] [options] [file/dir/glob ...]\n Example: pretty-parallel --max-workers=6 -c **/*.ts'
     )
     .default({})
     .option('w', {
@@ -39,11 +40,12 @@ const parseArgv = yargs(hideBin(process.argv))
 
 async function main(): Promise<void> {
     const parsedArguments = parseArgv.parseSync();
+    const workingDir = process.cwd();
 
     if (parsedArguments.c?.length) {
-        await processParallel('check', parsedArguments.c, parsedArguments.maxWorkers);
+        await processParallel('check', parsedArguments.c, workingDir, parsedArguments.maxWorkers);
     } else if (parsedArguments.w?.length) {
-        await processParallel('write', parsedArguments.w, parsedArguments.maxWorkers);
+        await processParallel('write', parsedArguments.w, workingDir, parsedArguments.maxWorkers);
     } else {
         parseArgv.showHelp();
         process.exit(1);

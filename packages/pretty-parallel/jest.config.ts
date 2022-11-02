@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-    displayName: 'parallel-prettier',
+    displayName: 'pretty-parallel',
     preset: '../../jest.preset.js',
     globals: {
         'ts-jest': {
@@ -11,6 +11,6 @@ export default {
         '^.+\\.[tj]s$': 'ts-jest',
     },
     moduleFileExtensions: ['ts', 'js', 'html'],
-    coverageDirectory: '../../coverage/packages/parallel-prettier',
+    coverageDirectory: '../../coverage/packages/pretty-parallel',
     testEnvironment: 'node',
 };

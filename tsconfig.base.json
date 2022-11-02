@@ -16,7 +16,7 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "parallel-prettier": ["packages/parallel-prettier/src/index.ts"]
+            "pretty-parallel": ["packages/pretty-parallel/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
