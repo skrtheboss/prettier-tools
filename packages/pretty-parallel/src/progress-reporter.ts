@@ -19,7 +19,7 @@ export class ProgressReporter {
 
         const percent = Math.floor((this.processed / this.totalCount) * 100);
         const elapsedMs = Date.now() - this.checkFilesStart;
-        const etaMs = percent == 100 ? 0 : elapsedMs * (this.totalCount / Math.min(this.processed, 1));
+        const etaMs = percent == 100 ? 0 : elapsedMs * (this.totalCount / Math.max(this.processed, 1));
         const filesPerSeconds = (this.processed / (elapsedMs / 1_000)).toFixed(0);
 
         this.checkFiles.text = `${this.message}\t${percent}% | ${this.processed}/${
