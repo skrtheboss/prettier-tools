@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.0.5](https://github.com/skrtheboss/prettier-tools/compare/pretty-parallel@0.0.4...pretty-parallel@0.0.5) (2022-11-02)
+
+### Bug Fixes
+
+-   **pretty-parallel:** fix rate calculation ([641dd2c](https://github.com/skrtheboss/prettier-tools/commit/641dd2cd9093eeba28d657523262c52f2ea85ff2))
+
 ## [0.0.4](https://github.com/skrtheboss/prettier-tools/compare/pretty-parallel@0.0.3...pretty-parallel@0.0.4) (2022-11-02)
 
 ### Bug Fixes
