@@ -24,12 +24,14 @@
         "node": ">=16.13.0"
     },
     "dependencies": {
-        "yargs": "^17.5.1",
+        "chalk": "^4.1.2",
         "fast-glob": "^3.2.12",
         "ignore": "^5.2.0",
-        "piscina": "^3.2.0",
         "ora": "^5.4.1",
-        "tslib": "^2.4.1"
+        "piscina": "^3.2.0",
+        "pretty-ms": "^7.0.1",
+        "tslib": "^2.4.1",
+        "yargs": "^17.6.0"
     },
     "peerDependencies": {
         "prettier": "^2.7.1"
