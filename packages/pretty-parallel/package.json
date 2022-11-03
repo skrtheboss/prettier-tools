@@ -3,8 +3,8 @@
     "version": "0.0.5",
     "description": "Concurrent prettier runner",
     "author": "Denis Frenademetz <denisfrenademetz97@gmail.com>",
-    "repository": "https://github.com/pretty-parallel/pretty-parallel",
-    "bugs": "https://github.com/pretty-parallel/pretty-parallel/issues",
+    "repository": "https://github.com/skrtheboss/prettier-tools",
+    "bugs": "https://github.com/skrtheboss/prettier-tools/issues",
     "license": "MIT",
     "files": [
         "cli.js",
