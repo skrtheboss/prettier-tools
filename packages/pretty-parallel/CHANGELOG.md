@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.0.6](https://github.com/skrtheboss/prettier-tools/compare/pretty-parallel@0.0.5...pretty-parallel@0.0.6) (2022-11-03)
+
+### Bug Fixes
+
+-   **pretty-parallel:** cleanup package.json ([2a95d85](https://github.com/skrtheboss/prettier-tools/commit/2a95d850b3855445e42f59d0369e6ec8757e6c28))
+
 ## [0.0.5](https://github.com/skrtheboss/prettier-tools/compare/pretty-parallel@0.0.4...pretty-parallel@0.0.5) (2022-11-02)
 
 ### Bug Fixes

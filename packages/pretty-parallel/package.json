@@ -1,6 +1,6 @@
 {
     "name": "pretty-parallel",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Concurrent prettier runner",
     "author": "Denis Frenademetz <denisfrenademetz97@gmail.com>",
     "repository": "https://github.com/skrtheboss/prettier-tools",
