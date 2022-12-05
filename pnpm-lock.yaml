@@ -5,7 +5,7 @@ specifiers:
   '@commitlint/config-conventional': 17.3.0
   '@commitlint/config-nx-scopes': 17.2.0
   '@commitlint/cz-commitlint': 17.3.0
-  '@jscutlery/semver': 2.27.2
+  '@jscutlery/semver': 2.29.0
   '@nrwl/cli': 15.0.5
   '@nrwl/devkit': 15.0.5
   '@nrwl/eslint-plugin-nx': 15.0.5
@@ -65,7 +65,7 @@ devDependencies:
   '@commitlint/config-conventional': 17.3.0
   '@commitlint/config-nx-scopes': 17.2.0_nx@15.0.5
   '@commitlint/cz-commitlint': 17.3.0_4weigh2hbblfnct7ibwk5b52la
-  '@jscutlery/semver': 2.27.2_@nrwl+devkit@15.0.5
+  '@jscutlery/semver': 2.29.0_@nrwl+devkit@15.0.5
   '@nrwl/cli': 15.0.5_jb5gqfizvbzmepf2nem6vggb5e
   '@nrwl/devkit': 15.0.5_nx@15.0.5+typescript@4.9.3
   '@nrwl/eslint-plugin-nx': 15.0.5_6ynb2kvcgegfd4ze4f5qa74dd4
@@ -1007,17 +1007,18 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@jscutlery/semver/2.27.2_@nrwl+devkit@15.0.5:
-    resolution: {integrity: sha512-xT8Ps2gaQgnn/7tXgkM9eMvS1GzWAQpusjpqzk39fdyfMeTsewyp+nFZ+24ZRlxNkPMS0TmIxvC1JLeh1f0vDg==}
+  /@jscutlery/semver/2.29.0_@nrwl+devkit@15.0.5:
+    resolution: {integrity: sha512-kRSxi8RNCT2RP6Vg5NwrWv4AcKf5MLFbsAh3WON15CSR+hlNS9AScOM9mDYWogE5C60jmuNULpLI6Xbt5O0Kog==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
-      '@nrwl/devkit': ^14.0.0
+      '@nrwl/devkit': ^15.0.0
     dependencies:
       '@nrwl/devkit': 15.0.5_nx@15.0.5+typescript@4.9.3
+      conventional-changelog: 3.1.25
+      conventional-recommended-bump: 6.1.0
       detect-indent: 6.1.0
       inquirer: 8.2.5
       rxjs: 7.5.7
-      standard-version: 9.5.0
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -2462,10 +2463,6 @@ packages:
       q: 1.5.1
     dev: true
 
-  /conventional-changelog-config-spec/2.1.0:
-    resolution: {integrity: sha512-IpVePh16EbbB02V+UA+HQnnPIohgXvJRxHcS5+Uwk4AT5LjzCZJm5sp/yqs5C6KZJ1jMsV4paEV13BN1pvDuxQ==}
-    dev: true
-
   /conventional-changelog-conventionalcommits/4.6.3:
     resolution: {integrity: sha512-LTTQV4fwOM4oLPad317V/QNQ1FY4Hju5qeBIM1uTHbrnCE+Eg4CdRZ3gO2pUeR+tzWdp80M2j3qFFEDWVqOV4g==}
     engines: {node: '>=10'}
@@ -2846,14 +2843,6 @@ packages:
   /dotenv/10.0.0:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
-    dev: true
-
-  /dotgitignore/2.1.0:
-    resolution: {integrity: sha512-sCm11ak2oY6DglEPpCB8TixLjWAxd3kJTs6UIcSasNYxXdFPV+YKlye92c8H4kKFqV5qYMIh7d+cYecEg0dIkA==}
-    engines: {node: '>=6'}
-    dependencies:
-      find-up: 3.0.0
-      minimatch: 3.1.2
     dev: true
 
   /duplexer/0.1.2:
@@ -3241,13 +3230,6 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       locate-path: 2.0.0
-    dev: true
-
-  /find-up/3.0.0:
-    resolution: {integrity: sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==}
-    engines: {node: '>=6'}
-    dependencies:
-      locate-path: 3.0.0
     dev: true
 
   /find-up/4.1.0:
@@ -4684,14 +4666,6 @@ packages:
       path-exists: 3.0.0
     dev: true
 
-  /locate-path/3.0.0:
-    resolution: {integrity: sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==}
-    engines: {node: '>=6'}
-    dependencies:
-      p-locate: 3.0.0
-      path-exists: 3.0.0
-    dev: true
-
   /locate-path/5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
@@ -5203,13 +5177,6 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       p-limit: 1.3.0
-    dev: true
-
-  /p-locate/3.0.0:
-    resolution: {integrity: sha512-x+12w/To+4GFfgJhBEpiDcLozRJGegY+Ei7/z0tSLkMmxGZNybVMSfWj9aJn8Z5Fc7dBUNJOOVgPv2H7IwulSQ==}
-    engines: {node: '>=6'}
-    dependencies:
-      p-limit: 2.3.0
     dev: true
 
   /p-locate/4.1.0:
@@ -5822,27 +5789,6 @@ packages:
       escape-string-regexp: 2.0.0
     dev: true
 
-  /standard-version/9.5.0:
-    resolution: {integrity: sha512-3zWJ/mmZQsOaO+fOlsa0+QK90pwhNd042qEcw6hKFNoLFs7peGyvPffpEBbK/DSGPbyOvli0mUIFv5A4qTjh2Q==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      chalk: 2.4.2
-      conventional-changelog: 3.1.25
-      conventional-changelog-config-spec: 2.1.0
-      conventional-changelog-conventionalcommits: 4.6.3
-      conventional-recommended-bump: 6.1.0
-      detect-indent: 6.1.0
-      detect-newline: 3.1.0
-      dotgitignore: 2.1.0
-      figures: 3.2.0
-      find-up: 5.0.0
-      git-semver-tags: 4.1.1
-      semver: 7.3.7
-      stringify-package: 1.0.1
-      yargs: 16.2.0
-    dev: true
-
   /string-argv/0.3.1:
     resolution: {integrity: sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg==}
     engines: {node: '>=0.6.19'}
@@ -5883,11 +5829,6 @@ packages:
     resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
     dependencies:
       safe-buffer: 5.2.1
-
-  /stringify-package/1.0.1:
-    resolution: {integrity: sha512-sa4DUQsYciMP1xhKWGuFM04fB0LG/9DlluZoSVywUMRNvzid6XucHK0/90xGxRoHrAaROrcHK1aPKaijCtSrhg==}
-    deprecated: This module is not used anymore, and has been replaced by @npmcli/package-json
-    dev: true
 
   /strip-ansi/6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
