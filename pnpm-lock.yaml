@@ -36,7 +36,7 @@ specifiers:
   jest: 28.1.3
   jest-environment-jsdom: 28.1.3
   jsonc-eslint-parser: 2.1.0
-  lint-staged: 13.0.4
+  lint-staged: 13.1.0
   nx: 15.0.5
   ora: 5.4.1
   piscina: 3.2.0
@@ -93,7 +93,7 @@ devDependencies:
   jest: 28.1.3_pfxkpkvs62uiwmbcnbb432f4n4
   jest-environment-jsdom: 28.1.3
   jsonc-eslint-parser: 2.1.0
-  lint-staged: 13.0.4
+  lint-staged: 13.1.0
   nx: 15.0.5_h4pdoyo3l3nua2jmzaw5vfqqmq
   ts-jest: 28.0.8_l4uz7kl2eeclic7mumfbeqbwgi
   ts-node: 10.9.1_i5kuerz7g2bbxc4mlpe24uzmze
@@ -4606,8 +4606,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/13.0.4:
-    resolution: {integrity: sha512-HxlHCXoYRsq9QCby5wFozmZW00hMs/9e3l+/dz6Qr8Kle4UH0kJTdABAbqhzG+3pcG6QjL9kz7NgGBfph+a5dw==}
+  /lint-staged/13.1.0:
+    resolution: {integrity: sha512-pn/sR8IrcF/T0vpWLilih8jmVouMlxqXxKuAojmbiGX5n/gDnz+abdPptlj0vYnbfE0SQNl3CY/HwtM0+yfOVQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
