@@ -34,6 +34,6 @@
         "yargs": "^17.7.2"
     },
     "peerDependencies": {
-        "prettier": "^2.7.1"
+        "prettier": "^3.0.1"
     }
 }

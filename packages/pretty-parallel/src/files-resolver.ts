@@ -9,16 +9,17 @@ interface ResolveFilePathsResult {
 
 export async function resolveFilePaths(
     filePatterns: ReadonlyArray<string | number>,
-    prettierignorePath: string
+    prettierignorePath: string,
 ): Promise<ResolveFilePathsResult> {
     const filePaths: string[] = [];
     const errors: string[] = [];
 
     const ignorer = createIgnorer(prettierignorePath);
+    const { languages } = await prettier.getSupportInfo();
 
     for await (const filePath of expandPatterns({
         filePatterns,
-        languages: prettier.getSupportInfo().languages,
+        languages,
     })) {
         if (typeof filePath === 'object') {
             errors.push(filePath.error);
