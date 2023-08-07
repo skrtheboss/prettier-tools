@@ -6,7 +6,7 @@
     },
     "tasksRunnerOptions": {
         "default": {
-            "runner": "@nrwl/nx-cloud",
+            "runner": "nx-cloud",
             "options": {
                 "cacheableOperations": ["build", "lint", "test", "e2e"],
                 "accessToken": "NmI1YmJmM2QtYzlkMy00MGVjLTgxYmQtMTYxMWIwODA5MzhkfHJlYWQtd3JpdGU="
@@ -40,7 +40,8 @@
             "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
             "!{projectRoot}/tsconfig.spec.json",
             "!{projectRoot}/jest.config.[jt]s",
-            "!{projectRoot}/.eslintrc.json"
+            "!{projectRoot}/.eslintrc.json",
+            "!{projectRoot}/src/test-setup.[jt]s"
         ]
     }
 }

@@ -5,25 +5,24 @@
     "projectType": "library",
     "targets": {
         "build": {
-            "executor": "@nrwl/js:tsc",
+            "executor": "@nx/js:tsc",
             "outputs": ["{options.outputPath}"],
             "options": {
                 "outputPath": "dist/packages/pretty-parallel",
                 "main": "packages/pretty-parallel/src/index.ts",
                 "tsConfig": "packages/pretty-parallel/tsconfig.lib.json",
-                "assets": ["packages/pretty-parallel/*.md"],
-                "updateBuildableProjectDepsInPackageJson": false
+                "assets": ["packages/pretty-parallel/*.md"]
             }
         },
         "lint": {
-            "executor": "@nrwl/linter:eslint",
+            "executor": "@nx/linter:eslint",
             "outputs": ["{options.outputFile}"],
             "options": {
                 "lintFilePatterns": ["packages/pretty-parallel/**/*.ts"]
             }
         },
         "test": {
-            "executor": "@nrwl/jest:jest",
+            "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/packages/pretty-parallel"],
             "options": {
                 "jestConfig": "packages/pretty-parallel/jest.config.ts",
