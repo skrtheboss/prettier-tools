@@ -115,9 +115,9 @@ async function* expandPatternsInternal(context: Context): AsyncGenerator<string 
 
         try {
             result = await fastGlob(glob, globOptions);
-        } catch ({ message }) {
+        } catch (err) {
             /* istanbul ignore next */
-            yield { error: `${errorMessages.globError[type]}: ${input}\n${message}` };
+            yield { error: `${errorMessages.globError[type]}: ${input}\n${(err as Error).message}` };
             /* istanbul ignore next */
             continue;
         }

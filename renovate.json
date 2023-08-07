@@ -33,11 +33,17 @@
             "stabilityDays": 5
         },
         {
-            "description": "Require approval for @nrwl packages",
+            "description": "Require approval for @nx packages",
             "groupName": "Nrwl Nx",
             "matchDatasources": ["npm"],
             "matchPackageNames": ["nx"],
-            "matchPackagePrefixes": ["@nrwl/"],
+            "matchPackagePrefixes": ["@nx/"],
+            "dependencyDashboardApproval": true
+        },
+        {
+            "description": "Require approval for package dependencies",
+            "matchDatasources": ["npm"],
+            "matchPackageNames": ["yargs", "prettier", "ignore"],
             "dependencyDashboardApproval": true
         },
         {

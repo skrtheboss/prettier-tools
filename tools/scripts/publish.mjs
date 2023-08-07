@@ -7,7 +7,7 @@
  * You might need to authenticate with NPM before running this script.
  */
 
-import { readCachedProjectGraph } from '@nrwl/devkit';
+import { readCachedProjectGraph } from '@nx/devkit';
 import { execSync } from 'child_process';
 import { bold, red } from 'colorette';
 import { readFileSync, writeFileSync } from 'fs';
