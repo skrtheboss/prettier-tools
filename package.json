@@ -1,7 +1,7 @@
 {
     "name": "pretty-parallel",
     "description": "Run prettier in parallel",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "scripts": {
         "format": "nx format:write",
