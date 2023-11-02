@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import yargs from 'yargs';
 import os from 'node:os';
+
+import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import { processParallel } from './src';
@@ -9,7 +10,7 @@ const parseArgv = yargs(hideBin(process.argv))
     .env('PRETTY_PARALLEL')
     .scriptName('pretty-parallel')
     .usage(
-        'Usage: pretty-parallel [processing options] [options] [file/dir/glob ...]\n Example: pretty-parallel --max-workers=6 -c **/*.ts'
+        'Usage: pretty-parallel [processing options] [options] [file/dir/glob ...]\n Example: pretty-parallel --max-workers=6 -c **/*.ts',
     )
     .default({})
     .option('w', {
