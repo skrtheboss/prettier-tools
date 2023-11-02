@@ -4,12 +4,16 @@ import Piscina from 'piscina';
 import * as prettier from 'prettier';
 
 export async function write(filepath: string): Promise<boolean> {
-    const original = readFileSync(filepath, { encoding: 'utf-8' });
+    const original = readFileSync(filepath, {
+        encoding: 'utf-8',
+    });
 
     const result = await prettier.format(original, { ...Piscina.workerData, filepath });
 
     if (original !== result) {
-        writeFileSync(filepath, result, { encoding: 'utf-8' });
+        writeFileSync(filepath, result, {
+            encoding: 'utf-8',
+        });
         return true;
     }
 
@@ -17,5 +21,10 @@ export async function write(filepath: string): Promise<boolean> {
 }
 
 export function check(filepath: string): Promise<boolean> {
-    return prettier.check(readFileSync(filepath, { encoding: 'utf-8' }), { ...Piscina.workerData, filepath });
+    return prettier.check(
+        readFileSync(filepath, {
+            encoding: 'utf-8',
+        }),
+        { ...Piscina.workerData, filepath },
+    );
 }

@@ -19,7 +19,10 @@ export async function resolveFilePaths(
 
     const { languages } = await prettier.getSupportInfo();
 
-    for await (const filePath of expandPatterns({ filePatterns, languages })) {
+    for await (const filePath of expandPatterns({
+        filePatterns,
+        languages,
+    })) {
         if (typeof filePath === 'object') {
             errors.push(filePath.error);
         } else if (ignorer(fixWindowsSlashes(filePath))) {

@@ -66,7 +66,11 @@ async function* expandPatternsInternal(context: Context): AsyncGenerator<string 
     let supportedFilesGlob: string;
     const cwd = process.cwd();
 
-    const entries: Array<{ type: 'file' | 'dir' | 'glob'; glob: string; input: string }> = [];
+    const entries: Array<{
+        type: 'file' | 'dir' | 'glob';
+        glob: string;
+        input: string;
+    }> = [];
 
     for (const pattern of context.filePatterns) {
         const stringPattern = pattern.toString();
@@ -118,7 +122,9 @@ async function* expandPatternsInternal(context: Context): AsyncGenerator<string 
             result = await fastGlob(glob, globOptions);
         } catch (err) {
             /* istanbul ignore next */
-            yield { error: `${errorMessages.globError[type]}: ${input}\n${(err as Error).message}` };
+            yield {
+                error: `${errorMessages.globError[type]}: ${input}\n${(err as Error).message}`,
+            };
             /* istanbul ignore next */
             continue;
         }

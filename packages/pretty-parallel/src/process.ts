@@ -19,18 +19,27 @@ class WorkerError extends Error {
     }
 }
 
+interface Options {
+    readonly filePatterns: ReadonlyArray<string | number>;
+    readonly workingDir: string;
+    readonly maxWorkers: number;
+    readonly config?: string;
+}
+
 export async function processParallel(
     type: 'check' | 'write',
-    filePatterns: Array<string | number>,
-    cwd: string,
-    maxWorkers: number,
+    { filePatterns, workingDir, maxWorkers, config }: Options,
 ): Promise<void> {
     const resolveFilesStart = Date.now();
 
-    const prettierIgnorePath = path.resolve(path.join(cwd, '.prettierignore'));
-    const prettierConfigPath = await prettier.resolveConfigFile(cwd);
+    const prettierIgnorePath = path.resolve(path.join(workingDir, '.prettierignore'));
+    const prettierConfigPath = config || (await prettier.resolveConfigFile(workingDir));
     const prettierOptions =
-        prettierConfigPath && (await prettier.resolveConfig(prettierConfigPath, { editorconfig: true }));
+        prettierConfigPath &&
+        (await prettier.resolveConfig(prettierConfigPath, {
+            config,
+            editorconfig: true,
+        }));
 
     const fileStructureLoadingSpinner = ora('Loading file structure').start();
 
@@ -53,13 +62,21 @@ export async function processParallel(
     const reporter = new ProgressReporter(filePaths.length, type);
 
     try {
-        const tasks: Array<Promise<{ result: boolean | void; filePath: string }>> = [];
+        const tasks: Array<
+            Promise<{
+                result: boolean | void;
+                filePath: string;
+            }>
+        > = [];
 
         for (const filePath of filePaths) {
             tasks.push(
                 piscina
                     .run(filePath, { name: type })
-                    .then((result) => ({ result, filePath }))
+                    .then((result) => ({
+                        result,
+                        filePath,
+                    }))
                     .catch((err) => {
                         throw new WorkerError(filePath, err);
                     })
