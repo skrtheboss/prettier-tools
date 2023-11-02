@@ -1,5 +1,6 @@
 import ora from 'ora';
 import prettyMilliseconds from 'pretty-ms';
+
 import { ETA } from './eta';
 
 export class ProgressReporter {
@@ -10,7 +11,10 @@ export class ProgressReporter {
 
     private processed = 0;
 
-    constructor(private readonly totalCount: number, private readonly type: 'check' | 'write') {
+    constructor(
+        private readonly totalCount: number,
+        private readonly type: 'check' | 'write',
+    ) {
         this.message = type === 'check' ? 'Checking formatting' : 'Writing formatting';
 
         this.checkFilesStart = Date.now();
@@ -32,7 +36,7 @@ export class ProgressReporter {
         this.checkFiles.text = `${this.message}\t${percent}% | ${this.processed}/${
             this.totalCount
         }  | ETA: ${this.eta.getTime()} | Elapsed: ${prettyMilliseconds(elapsedMs)} | ${(
-            this.eta.getRate() * 1_000
+            this.eta.getRate() * 1000
         ).toFixed(0)} files/s`;
     }
 

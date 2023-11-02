@@ -1,5 +1,6 @@
-import ignore from 'ignore';
 import { existsSync, readFileSync } from 'node:fs';
+
+import ignore from 'ignore';
 
 type Ignorer = (filePath: string) => boolean;
 

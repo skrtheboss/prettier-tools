@@ -1,14 +1,19 @@
-import * as prettier from 'prettier';
 import path from 'node:path';
-import Piscina from 'piscina';
-import ora from 'ora';
+
 import chalk from 'chalk';
+import ora from 'ora';
+import Piscina from 'piscina';
+import * as prettier from 'prettier';
 import prettyMilliseconds from 'pretty-ms';
-import { ProgressReporter } from './progress-reporter';
+
 import { resolveFilePaths } from './files-resolver';
+import { ProgressReporter } from './progress-reporter';
 
 class WorkerError extends Error {
-    constructor(public readonly filePath: string, public readonly error: Error) {
+    constructor(
+        public readonly filePath: string,
+        public readonly error: Error,
+    ) {
         super();
         Object.setPrototypeOf(this, WorkerError.prototype);
     }
@@ -18,7 +23,7 @@ export async function processParallel(
     type: 'check' | 'write',
     filePatterns: Array<string | number>,
     cwd: string,
-    maxWorkers: number
+    maxWorkers: number,
 ): Promise<void> {
     const resolveFilesStart = Date.now();
 
@@ -33,8 +38,8 @@ export async function processParallel(
 
     fileStructureLoadingSpinner.info(
         `Found ${chalk.bold(filePaths.length)} ${filePaths.length === 1 ? 'file' : 'files'} [${prettyMilliseconds(
-            Date.now() - resolveFilesStart
-        )}]`
+            Date.now() - resolveFilesStart,
+        )}]`,
     );
 
     const prettierStart = Date.now();
@@ -58,7 +63,7 @@ export async function processParallel(
                     .catch((err) => {
                         throw new WorkerError(filePath, err);
                     })
-                    .finally(() => reporter.update(piscina.completed))
+                    .finally(() => reporter.update(piscina.completed)),
             );
         }
 
@@ -72,14 +77,14 @@ export async function processParallel(
                 reporter.fail(
                     `Code style issues found in the ${chalk.bold(checkFailures.length)} ${
                         checkFailures.length === 1 ? 'file' : 'files'
-                    } above. Forgot to run Prettier? [${prettyMilliseconds(Date.now() - prettierStart)}]`
+                    } above. Forgot to run Prettier? [${prettyMilliseconds(Date.now() - prettierStart)}]`,
                 );
                 process.exit(1);
             } else {
                 reporter.succeed(
                     `Successfully checked ${chalk.bold(filePaths.length)} ${
                         filePaths.length === 1 ? 'file' : 'files'
-                    }! [${prettyMilliseconds(Date.now() - prettierStart)}]`
+                    }! [${prettyMilliseconds(Date.now() - prettierStart)}]`,
                 );
                 process.exit(0);
             }
@@ -88,7 +93,7 @@ export async function processParallel(
             reporter.succeed(
                 `Successfully formatted ${chalk.bold(filePaths.length)} ${
                     filePaths.length === 1 ? 'file' : 'files'
-                }! [${prettyMilliseconds(Date.now() - prettierStart)}]`
+                }! [${prettyMilliseconds(Date.now() - prettierStart)}]`,
             );
             process.exit(0);
         }
@@ -102,5 +107,5 @@ export async function processParallel(
         }
     }
 
-    console.log(`Total time ${(Date.now() - resolveFilesStart) / 1_000}s `);
+    console.log(`Total time ${(Date.now() - resolveFilesStart) / 1000}s `);
 }

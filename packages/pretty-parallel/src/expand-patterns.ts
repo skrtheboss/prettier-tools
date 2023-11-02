@@ -3,11 +3,12 @@
  * and has been adapted to typescript
  */
 
-import path from 'node:path';
+import { Stats } from 'node:fs';
 import fs from 'node:fs/promises';
+import path from 'node:path';
+
 import fastGlob from 'fast-glob';
 import { SupportLanguage } from 'prettier';
-import { Stats } from 'node:fs';
 
 interface Context {
     readonly filePatterns: ReadonlyArray<string | number>;
@@ -181,7 +182,7 @@ function sortPaths(paths: string[]): string[] {
 function escapePathForGlob(path: string): string {
     return fastGlob
         .escapePath(
-            path.replace(/\\/g, '\0') // Workaround for fast-glob#262 (part 1)
+            path.replace(/\\/g, '\0'), // Workaround for fast-glob#262 (part 1)
         )
         .replace(/\\!/g, '@(!)') // Workaround for fast-glob#261
         .replace(/\0/g, '@(\\\\)'); // Workaround for fast-glob#262 (part 2)
