@@ -35,15 +35,6 @@
                 }
             }
         },
-        "version": {
-            "executor": "@jscutlery/semver:version",
-            "options": {
-                "baseBranch": "main",
-                "preset": "conventional",
-                "tagPrefix": "${projectName}@",
-                "commitMessageFormat": "chore(${projectName}): release version ${version}"
-            }
-        },
         "publish-to-npm": {
             "executor": "nx:run-commands",
             "options": {

@@ -37,6 +37,9 @@ devDependencies:
   '@commitlint/cli':
     specifier: 18.2.0
     version: 18.2.0(typescript@5.2.2)
+  '@commitlint/config-angular':
+    specifier: ^17.0.0
+    version: 17.8.1
   '@commitlint/config-conventional':
     specifier: 18.1.0
     version: 18.1.0
@@ -1464,6 +1467,18 @@ packages:
       yargs: 17.7.2
     transitivePeerDependencies:
       - typescript
+    dev: true
+
+  /@commitlint/config-angular-type-enum@17.8.1:
+    resolution: {integrity: sha512-vuIQ9rZckMPRM6I3mWzfWb7TfvE/yHJXNKaR2weuhf+lQEVSZSGQP3LwdXpMcT2QGKE9VAhU/jw0qIE0Z9EbHA==}
+    engines: {node: '>=v14'}
+    dev: true
+
+  /@commitlint/config-angular@17.8.1:
+    resolution: {integrity: sha512-M3gfC2YttKOEDHrtOtCHfoIdF74vUc+ffJHTyU6j+xqlXrc34iOS665r1rRaTgX6CEeUAnNdpWn0zKYZTj27lA==}
+    engines: {node: '>=v14'}
+    dependencies:
+      '@commitlint/config-angular-type-enum': 17.8.1
     dev: true
 
   /@commitlint/config-conventional@18.1.0:
