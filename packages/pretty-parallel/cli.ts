@@ -13,6 +13,10 @@ const parseArgv = yargs(hideBin(process.argv))
         'Usage: pretty-parallel [processing options] [options] [file/dir/glob ...]\n Example: pretty-parallel --max-workers=6 -c **/*.ts',
     )
     .default({})
+    .option('config', {
+        describe: 'Path to a Prettier configuration file (.prettierrc, package.json, prettier.config.js).',
+        type: 'string',
+    })
     .option('w', {
         describe: 'Edit files in-place. (Beware!)',
         alias: 'write',
@@ -40,13 +44,23 @@ const parseArgv = yargs(hideBin(process.argv))
     .help(true);
 
 async function main(): Promise<void> {
-    const parsedArguments = parseArgv.parseSync();
+    const { maxWorkers, c, w, config } = parseArgv.parseSync();
     const workingDir = process.cwd();
 
-    if (parsedArguments.c?.length) {
-        await processParallel('check', parsedArguments.c, workingDir, parsedArguments.maxWorkers);
-    } else if (parsedArguments.w?.length) {
-        await processParallel('write', parsedArguments.w, workingDir, parsedArguments.maxWorkers);
+    if (c?.length) {
+        await processParallel('check', {
+            filePatterns: c,
+            workingDir,
+            maxWorkers,
+            config,
+        });
+    } else if (w?.length) {
+        await processParallel('write', {
+            filePatterns: w,
+            workingDir,
+            maxWorkers,
+            config,
+        });
     } else {
         parseArgv.showHelp();
         process.exit(1);

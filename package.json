@@ -22,7 +22,7 @@
         "ora": "5.4.1",
         "piscina": "4.1.0",
         "prettier": "3.0.0",
-        "pretty-ms": "8.0.0",
+        "pretty-ms": "7.0.1",
         "tslib": "2.6.2",
         "yargs": "17.7.2"
     },

@@ -6,8 +6,14 @@ type Ignorer = (filePath: string) => boolean;
 
 export function createIgnorer(prettierignore: string): Ignorer {
     if (existsSync(prettierignore)) {
-        return ignore({ allowRelativePaths: true })
-            .add(readFileSync(prettierignore, { encoding: 'utf-8' }))
+        return ignore({
+            allowRelativePaths: true,
+        })
+            .add(
+                readFileSync(prettierignore, {
+                    encoding: 'utf-8',
+                }),
+            )
             .createFilter();
     }
 
