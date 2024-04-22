@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [1.0.2](https://github.com/skrtheboss/prettier-tools/compare/v1.0.1...v1.0.2) (2024-04-22)
+
+### Bug Fixes
+
+-   ensure prettier config is resolved correctly ([#181](https://github.com/skrtheboss/prettier-tools/issues/181)) ([85eb421](https://github.com/skrtheboss/prettier-tools/commit/85eb421aa187393869d08fbe5bc8f91b93d2bda7)), closes [#157](https://github.com/skrtheboss/prettier-tools/issues/157)
+
 ## [1.0.1](https://github.com/skrtheboss/prettier-tools/compare/v1.0.0...v1.0.1) (2023-11-02)
 
 ### Bug Fixes
