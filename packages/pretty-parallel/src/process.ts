@@ -33,11 +33,12 @@ export async function processParallel(
     const resolveFilesStart = Date.now();
 
     const prettierIgnorePath = path.resolve(path.join(workingDir, '.prettierignore'));
-    const prettierConfigPath = config || (await prettier.resolveConfigFile(workingDir));
+    const packageJsonPath = path.join(workingDir, 'package.json');
+    const prettierConfigPath = config || (await prettier.resolveConfigFile(packageJsonPath));
     const prettierOptions =
         prettierConfigPath &&
-        (await prettier.resolveConfig(prettierConfigPath, {
-            config,
+        (await prettier.resolveConfig(packageJsonPath, {
+            config: prettierConfigPath,
             editorconfig: true,
         }));
 
