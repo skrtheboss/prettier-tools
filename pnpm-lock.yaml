@@ -83,8 +83,8 @@ devDependencies:
     specifier: 1.4.17
     version: 1.4.17
   '@types/jest':
-    specifier: 29.5.7
-    version: 29.5.7
+    specifier: 29.5.14
+    version: 29.5.14
   '@types/node':
     specifier: 16.18.126
     version: 16.18.126
@@ -2900,8 +2900,8 @@ packages:
       '@types/istanbul-lib-report': 3.0.2
     dev: true
 
-  /@types/jest@29.5.7:
-    resolution: {integrity: sha512-HLyetab6KVPSiF+7pFcUyMeLsx25LDNDemw9mGsJBkai/oouwrjTycocSDYopMEwFhN2Y4s9oPyOCZNofgSt2g==}
+  /@types/jest@29.5.14:
+    resolution: {integrity: sha512-ZN+4sdnLUbo8EVvVc2ao0GFW6oVrQRPn4K2lglySj7APvSrgzxHiNNK99us4WDMi57xxA2yggblIAMNhXOotLQ==}
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
