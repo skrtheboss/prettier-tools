@@ -17,7 +17,7 @@
     },
     "dependencies": {
         "chalk": "4.1.2",
-        "fast-glob": "3.3.1",
+        "fast-glob": "3.3.3",
         "ignore": "5.2.4",
         "ora": "5.4.1",
         "piscina": "4.1.0",
