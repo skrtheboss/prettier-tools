@@ -21,8 +21,8 @@ dependencies:
     specifier: 4.1.0
     version: 4.1.0
   prettier:
-    specifier: 3.0.0
-    version: 3.0.0
+    specifier: 3.5.0
+    version: 3.5.0
   pretty-ms:
     specifier: 7.0.1
     version: 7.0.1
@@ -7662,8 +7662,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@3.0.0:
-    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+  /prettier@3.5.0:
+    resolution: {integrity: sha512-quyMrVt6svPS7CjQ9gKb3GLEX/rl3BCL2oa/QkNcXv4YNVBC9olt3s+H7ukto06q7B1Qz46PbrKLO34PR6vXcA==}
     engines: {node: '>=14'}
     hasBin: true
     dev: false
