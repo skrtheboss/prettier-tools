@@ -30,8 +30,8 @@ dependencies:
     specifier: 2.6.2
     version: 2.6.2
   yargs:
-    specifier: 17.7.2
-    version: 17.7.2
+    specifier: 17.7.3
+    version: 17.7.3
 
 devDependencies:
   '@commitlint/cli':
@@ -92,8 +92,8 @@ devDependencies:
     specifier: 7.5.4
     version: 7.5.4
   '@types/yargs':
-    specifier: 17.0.29
-    version: 17.0.29
+    specifier: 17.0.35
+    version: 17.0.35
   '@typescript-eslint/eslint-plugin':
     specifier: 5.62.0
     version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.52.0)(typescript@5.2.2)
@@ -1443,7 +1443,7 @@ packages:
       lodash.isfunction: 3.0.9
       resolve-from: 5.0.0
       resolve-global: 1.0.0
-      yargs: 17.7.2
+      yargs: 17.7.3
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -1995,7 +1995,7 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.5
       '@types/istanbul-reports': 3.0.3
       '@types/node': 16.18.126
-      '@types/yargs': 17.0.29
+      '@types/yargs': 17.0.35
       chalk: 4.1.2
     dev: true
 
@@ -2967,8 +2967,8 @@ packages:
     resolution: {integrity: sha512-5qcvofLPbfjmBfKaLfj/+f+Sbd6pN4zl7w7VSVI5uz7m9QZTuB2aZAa2uo1wHFBNN2x6g/SoTkXmd8mQnQF2Cw==}
     dev: true
 
-  /@types/yargs@17.0.29:
-    resolution: {integrity: sha512-nacjqA3ee9zRF/++a3FUY1suHTFKZeHba2n8WeDw9cCVdmzmHpIxyzOJBcpHvvEmS8E9KqWlSnWHUkOrkhWcvA==}
+  /@types/yargs@17.0.35:
+    resolution: {integrity: sha512-qUHkeCyQFxMXg79wQfTtfndEC+N9ZZg76HJftDJp+qH2tV7Gj4OJi7l+PiWwJ+pWtW8GwSmqsDj/oymhrTWXjg==}
     dependencies:
       '@types/yargs-parser': 21.0.2
     dev: true
@@ -6219,7 +6219,7 @@ packages:
       jest-config: 29.7.0(@types/node@16.18.126)(ts-node@10.9.1)
       jest-util: 29.7.0
       jest-validate: 29.7.0
-      yargs: 17.7.2
+      yargs: 17.7.3
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -7292,7 +7292,7 @@ packages:
       tsconfig-paths: 4.2.0
       tslib: 2.6.2
       v8-compile-cache: 2.3.0
-      yargs: 17.7.2
+      yargs: 17.7.3
       yargs-parser: 21.1.1
     optionalDependencies:
       '@nx/nx-darwin-arm64': 17.0.2
@@ -9108,8 +9108,8 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /yargs@17.7.2:
-    resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
+  /yargs@17.7.3:
+    resolution: {integrity: sha512-GZtjxm/J/4TSxuL3FNYjCmLktBTnIw/rVmKSIyKeYAZpmJB2ig9VauCC5xsa82GNKVKDAqpOn3KVzNt0zmrU0g==}
     engines: {node: '>=12'}
     dependencies:
       cliui: 8.0.1
